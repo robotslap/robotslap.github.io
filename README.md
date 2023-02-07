@@ -1,7 +1,3 @@
-# robotslap.github.io
-
-     SLAP: Spatial-Language Attention Policies        
-
 Spatial-Language Attention Policies for Efficient Robot Learning
 ================================================================
 
@@ -41,8 +37,8 @@ Comparision of performances between our best-validation score model against PerA
 
 Success rates of in-distribution scenes and language samples from a set of phrasings of the tasks.
 
-Results
--------
+Videos
+------
 
 ![Placeholder](./images/placeholder.gif)
 
