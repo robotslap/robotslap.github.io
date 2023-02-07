@@ -3,11 +3,11 @@ Spatial-Language Attention Policies for Efficient Robot Learning
 
 Author Names Omitted for Anonymous Review
 
-Paper Code
+Paper Code: 193
 
 ![SLAP base model](./images/overview_slap.png)
 
-### Overview of SLAP.
+#### Overview of SLAP.
 
 Abstract
 --------
