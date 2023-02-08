@@ -18,7 +18,46 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<section class="hero">
+
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+    <div class="navbar-menu">
+        <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                    Table of contents
+                </a>
+                <div class="navbar-dropdown">
+                    <a class="navbar-item" href="#title">
+                        Title
+                    </a>
+                    <a class="navbar-item" href="#videos">
+                        Videos
+                    </a>
+                    <a class="navbar-item" href="#overview">
+                        Overview
+                    </a>
+                    <a class="navbar-item" href="#abstract">
+                        Abstract
+                    </a>
+                    <a class="navbar-item" href="#results">
+                        Results
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</nav>
+
+<section class="hero" id="title">
     <div class="hero-body">
         <div class="container is-max-desktop">
             <div class="columns is-centered">
@@ -28,7 +67,7 @@
                     <div class="is-size-5 publication-authors">
                         <span class="author-block">
                             <p>
-                                Author Names Omitted for Anonymous Review
+                                Author Names Omitted for Anonymous Review; Paper ID: <em>193</em>
                             </p>
                         </span>
                     </div>
@@ -57,18 +96,65 @@
         </div>
 </section>
 
-<section class="section">
-    <div class="container is-max-desktop">
-        <div class="columns is-centered">
-            <div class="column is-four-fifths">
-                <img src="./images/overview_slap.png" alt="SLAP base model" style="width:150%;">
-                <h3 style="font-size: 85%;" class="title is-7" align="center">Overview of SLAP. </h3>
+<section class="videos" id="videos">
+    <div class="container is-max-desktop has-text-centered">
+        <div class="columns is-centered has-text-centered">
+            <div class="column">
+                <video poster="" id="vids" autoplay muted loop playsinline height="100%">
+                    <source src="./media/Close drawer 0.mp4" type="video/mp4">
+                </video>
+                <p>Close drawer</p>
+            </div>
+            <div class="column">
+                <video poster="" id="vids" autoplay muted loop playsinline height="100%">
+                    <source src="./media/Open bottom drawer 0.mp4" type="video/mp4">
+                </video>
+                <p>Open bottom drawer</p>
+            </div>
+            <div class="column">
+                <video poster="" id="vids" autoplay muted loop playsinline height="100%">
+                    <source src="./media/Open top drawer 0.mp4" type="video/mp4">
+                </video>
+                <p>Open top drawer</p>
+            </div>
+            <div class="column">
+                <video poster="" id="vids" autoplay muted loop playsinline height="100%">
+                    <source src="./media/Pick up bottle 0.mp4" type="video/mp4">
+                </video>
+                <p>Pick up the bottle</p>
+            </div>
+        </div>
+        <div class="columns is-centered has-text-centered">
+            <div class="column">
+                <video poster="" id="vids" autoplay muted loop playsinline height="100%">
+                    <source src="./media/Pick up lemon 0 .mp4" type="video/mp4">
+                </video>
+                <p>Pick up the lemon</p>
+            </div>
+            <div class="column">
+                <video poster="" id="vids" autoplay muted loop playsinline height="100%">
+                    <source src="./media/Place in basket 0.mp4" type="video/mp4">
+                </video>
+                <p>Place in the basket</p>
+            </div>
+            <div class="column">
+                <video poster="" id="vids" autoplay muted loop playsinline height="100%">
+                    <source src="./media/Place in bowl 0.mp4" type="video/mp4">
+                </video>
+                <p>Place in the bowl</p>
+            </div>
+            <div class="column">
+                <video poster="" id="vids" autoplay muted loop playsinline height="100%">
+                    <source src="./media/Place in drawer 0.mp4" type="video/mp4">
+                </video>
+                <p>Place in the drawer</p>
             </div>
         </div>
     </div>
+    </div>
 </section>
 
-<section class="section">
+<section class="section" id="abstract">
     <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
             <div class="column is-four-fifths">
@@ -95,36 +181,66 @@
     </div>
 </section>
 
-<section class="section">
-    <div class="container is-max-desktop">
-        <div class="columns is-centered">
+
+<section class="section" id="overview">
+    <div class="container is-max-desktop has-text-centered">
+        <h2 class="title is-2">Overview of SLAP</h2>
+        <div class="columns is-centered has-text-centered">
             <div class="column is-four-fifths">
-                <img src="./images/overview.png" alt="SLAP base model" style="width:150%;">
-                <h3 class="title is-7" align="center">An overview of the classifier's architecture. </h3>
+                <img src="./media/overview.png" alt="SLAP base model" style="width:150%;">
+                <p style="font-size: 85%;"> Overview of SLAP: Our method has two components: an “interaction prediction”
+                    module which localizes relevant features in a scene, and an “action prediction” module which uses
+                    local context to predict an executable action.</p>
+            </div>
+        </div>
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <img src="./media/architecture.png" alt="SLAP base model" style="width:150%;">
+                <p style="font-size: 85%;">
+                    An overview of the classifier's architecture: The point cloud is
+                    downsampled to remove duplicates and encoded using two modified set-abstraction layers. The SA
+                    layers generate a local spatial embedding which is concatenated with proprioceptive features - in
+                    our case, the current gripper state. Both spatial and language features are concatenated and input
+                    into a PerceiverIO transformer backbone. We then predict an interaction score per spatial feature
+                    and the argmax is chosen as the interaction site for command <i>l</i>.
+                </p>
+            </div>
+        </div>
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <img src="./media/process.png" alt="SLAP base model" style="width:150%;">
+                <p style="font-size: 85%;">
+                    Process for SLAP training where demonstrations are collected and used to train the Interaction
+                    Prediction module and Action Prediction model.
+                    We can then make predictions on where the robot should move based on the predicted interaction
+                    point.
+                </p>
             </div>
         </div>
     </div>
 </section>
-<section class="result">
+
+
+<section class="result" id="results">
     <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
             <div class="column is-four-fifths">
                 <h2 class="title is-2">Results</h2>
-                <img src="./images/result-1.png" alt="results-1">
+                <img src="./media/result-1.png" alt="results-1">
                 <p>
                     Predicted mask <span style="color: red;">(red)</span> of object of interest, and interaction sites
                     <span style="color: #AB8938;">(yellow)</span>
                 </p>
                 <div class="columns">
                     <div class="column">
-                        <img src="./images/table-1.png" alt="table 1">
+                        <img src="./media/table-1.png" alt="table 1">
                         <p style="font-size: 85%;">
                             SLAP vs PerAct comparision of performance on previously unseen real-world scenes of
                             "in-distribution" configuration of objects.
                         </p>
                     </div>
                     <div class="column">
-                        <img src="./images/table-2.png" alt="table 2">
+                        <img src="./media/table-2.png" alt="table 2">
                         <p style="font-size: 85%;">
                             Comparision of performances between our best-validation score model against PerAct on
                             real-world instances. Both in and out of domain configurations used.
@@ -136,48 +252,7 @@
         </div>
     </div>
 </section>
-<section class="videos">
-    <div class="container is-max-desktop has-text-centered">
-        <h2 class="title is-2" style="margin-top: 2%;">Videos</h2>
-        <div class="columns is-centered has-text-centered">
-            <div class="column">
-                <img src="./images/placeholder.gif" alt="Placeholder" style="width:120%;">
-                <p>Placeholder 1</p>
-            </div>
-            <div class="column">
-                <img src="./images/placeholder.gif" alt="Placeholder" style="width:120%;">
-                <p>Placeholder 2</p>
-            </div>
-            <div class="column">
-                <img src="./images/placeholder.gif" alt="Placeholder" style="width:120%;">
-                <p>Placeholder 3</p>
-            </div>
-            <div class="column">
-                <img src="./images/placeholder.gif" alt="Placeholder" style="width:120%;">
-                <p>Placeholder 4</p>
-            </div>
-        </div>
-        <div class="columns is-centered has-text-centered">
-            <div class="column">
-                <img src="./images/placeholder.gif" alt="Placeholder" style="width:120%;">
-                <p>Placeholder 5</p>
-            </div>
-            <div class="column">
-                <img src="./images/placeholder.gif" alt="Placeholder" style="width:120%;">
-                <p>Placeholder 6</p>
-            </div>
-            <div class="column">
-                <img src="./images/placeholder.gif" alt="Placeholder" style="width:120%;">
-                <p>Placeholder 7</p>
-            </div>
-            <div class="column">
-                <img src="./images/placeholder.gif" alt="Placeholder" style="width:120%;">
-                <p>Placeholder 8</p>
-            </div>
-            </div>
-        </div>
-    </div>
-</section>
+
 <footer class="footer">
     <div class="container">
         <div class="columns is-centered">
