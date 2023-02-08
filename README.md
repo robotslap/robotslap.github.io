@@ -2,7 +2,7 @@
 
 Table of contents
 
-[Title](#title) [Abstract](#abstract) [Overview](#Overview of SLAP) [Results](#results)
+[Title](#title) [Abstract](#abstract) [Overview](#OverviewofSLAP) [Results](#results)
 
 Spatial-Language Attention Policies for Efficient Robot Learning
 ================================================================
