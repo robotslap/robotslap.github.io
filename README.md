@@ -10,7 +10,7 @@ Spatial-Language Attention Policies for Efficient Robot Learning
 Author Names Omitted for Anonymous Review; Paper ID: _193_
 
 Paper Code
-
+![](./media/Close drawer 0.mp4)
 Close drawer
 
 Open bottom drawer
