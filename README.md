@@ -9,25 +9,6 @@ Spatial-Language Attention Policies for Efficient Robot Learning
 
 Author Names Omitted for Anonymous Review; Paper ID: _193_
 
-Paper Code
- <video poster="" id="vids" autoplay muted loop playsinline height="100%">
-<source src="./media/Close drawer 0.mp4" type="video/mp4">
-</video>
-Close drawer
-
-Open bottom drawer
-
-Open top drawer
-
-Pick up the bottle
-
-Pick up the lemon
-
-Place in the basket
-
-Place in the bowl
-
-Place in the drawer
 
 Abstract
 --------
