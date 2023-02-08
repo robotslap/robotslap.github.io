@@ -2,7 +2,7 @@
 
 Table of contents
 
-[Title](#title) [Videos](#videos) [Overview](#overview) [Abstract](#abstract) [Results](#results)
+[Title](#title) [Abstract](#abstract) [Overview](#overview) [Results](#results)
 
 Spatial-Language Attention Policies for Efficient Robot Learning
 ================================================================
