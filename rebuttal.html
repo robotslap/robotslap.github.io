@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Spatial-Language Attention Policies for Efficient Robot Learning">
+    <meta name="keywords" content="Language-conditioned multi-task robot learning">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="" />
+    <title>Rebuttal SLAP</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css'>
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+ <section class="hero" id="title">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h1 class="title is-1">Rebuttal: SLAP </h1>
+                </div>
+            </div>
+        </div>
+ </section>
+
+
+<section class="section" id="experiment-overview">
+    <div class="container is-max-desktop">
+        <h2 class="title is-2 has-text-centered" style="font-weight: bold;">Experiment Setup</h2>
+        <p>
+            Our team conducted two experiments to evaluate the performance of our SLAP system. 
+            Experiment I (SLAP ablations on RLBench tasks) involved training and evaluating five 
+            ablated variations of the SLAP's APM system and compare with PerAct's performance on same RLBench taks.
+            Experiment II (SLAP ablations on held-out test set collected from the real-robot) focused on 
+            evaluating seven ablated versions of the SLAP's APM system on a held-out test set collected 
+            from a real robot.
+
+            APM ablations and PerAct models in Experiment I share the same training and testing data,
+            which was pre-collected from RLBench and stored in-memory. It is worth noting that 
+            the training time required for the PerAct model, as presented in [3], is typically around 
+            two weeks. However, our 20-epoch training of the PerAct model resulted in a training time of 
+            approximately 45 minutes, which is same as the SLAP training budget.
+
+            Each model was trained for the same number of steps in order to establish a fair comparison 
+            (corresponding to 20 epochs). We provided ground truth interaction points to the ablations 
+            where it was applicable.
+        </p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <table style="border-collapse: collapse; border: 1px solid black;">
+                        <caption style="text-align: center; font-weight: bold;">Details for Experiment I.</caption>
+                        <tr>
+                            <th style="border: 1px solid black; padding: 5px;">Ablation ID</th>
+                            <th style="border: 1px solid black; padding: 5px;">Description</th>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid black; padding: 5px;">A0</td>
+                            <td style="border: 1px solid black; padding: 5px;">DR: depth noise, positional and rotational randomization as well as color jitter</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid black; padding: 5px;">A1</td>
+                            <td style="border: 1px solid black; padding: 5px;">DR: depth noise, positional and rotational randomization; No color jitter</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid black; padding: 5px;">A2</td>
+                            <td style="border: 1px solid black; padding: 5px;">Without any DR</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid black; padding: 5px;">A3</td>
+                            <td style="border: 1px solid black; padding: 5px;">Interaction hotspot is provided, without any cropping of PCD; No DR</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid black; padding: 5px;">A4</td>
+                            <td style="border: 1px solid black; padding: 5px;">No interaction hotspots, without any cropping of PCD; No DR</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section" id="experiment-i-iii-results">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Experiment I Results: Ablations and PerAct on RLBench</h2>
+    <div class="text-center">
+      <figure>
+        <img src="./media/per_task_ablation.png" alt="Positional error per task">
+        <figcaption style="text-align: center; font-weight: bold;">Fig 1. Positional error (in m) for chosen RLBench task</figcaption>
+      </figure>
+    </div>
+
+    <div class="text-center">
+      <figure>
+        <img src="./media/averaged_ablation.png" alt="Positional error averaged across tasks">
+        <figcaption style="text-align: center; font-weight: bold;">Fig 2. Positional error (in m) per ablation averaged over tasks in RLBench</figcaption>
+      </figure>
+    </div>
+    <div class="content has-text-justified">
+      <p>
+          Ablation A0 through A3 behave similarly on simulation data, however not providing the interaction hotspot
+          leads to a significant degradation in performance of the action prediction module (APM). In Fig. 1., we observe that 
+          PerAct generally does better than our worse ablation, yet worse than our other models. Due to
+          high positional error on one task, it averages to be closer to the overall error of our worse model in Fig. 2.
+      </p>
+    </div>
+  </div>
+</section>
+<section class="section" id="experiment-ii-results">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Experiment II: Real-world Data</h2>
+    <div class="content has-text-justified">
+      <p>
+          This experiment studies the correlation of ablation performance seen in simulation with performance on real-world data.
+          The real-world data has a larger variation over position and orientation of the object as well as a lot of clutter
+          from objects on table which are not implicated in the given task. If correlations hold then we should see ablations
+          B0 through B3 to be of similar efficacy on real-world data. The ablations studied in this experiment are defined as follows:
+      </p>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <table style="border-collapse: collapse; border: 1px solid black;">
+                    <caption style="text-align: center; font-weight: bold;">Details for Experiment II.</caption>
+                    <tr>
+                        <th style="border: 1px solid black; padding: 5px;">Ablation ID</th>
+                        <th style="border: 1px solid black; padding: 5px;">Description</th>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid black; padding: 5px;">B0</td>
+                        <td style="border: 1px solid black; padding: 5px;">(APM as in paper)DR: depth noise, positional and rotational randomization as well as color jitter</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid black; padding: 5px;">B1</td>
+                        <td style="border: 1px solid black; padding: 5px;">DR: depth noise, positional and rotational randomization; No color jitter</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid black; padding: 5px;">B2</td>
+                        <td style="border: 1px solid black; padding: 5px;">Without any DR</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid black; padding: 5px;">B3</td>
+                        <td style="border: 1px solid black; padding: 5px;">Interaction hotspot is provided, without any cropping of PCD; No DR</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid black; padding: 5px;">B4</td>
+                        <td style="border: 1px solid black; padding: 5px;">No interaction hotspots, without any cropping of PCD; No DR</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid black; padding: 5px;">B5</td>
+                        <td style="border: 1px solid black; padding: 5px;">B3 with DR; No color jitter</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid black; padding: 5px;">B6</td>
+                        <td style="border: 1px solid black; padding: 5px;">B3 with DR and color jitter</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+      </div>
+        <div class="content has-text-justified">
+          <p>
+            We see that the trends noticed in simulation correlate with APM performance in rral-world. Our observations suggest that
+            the primary design choice driving SLAP's performance gains is the division of prediction problem into predicting a reliable
+            interaction point which informs the action pose.
+          </p>
+        </div>
+            <div class="text-center">
+              <figure>
+                <img src="./media/real_world_ablation.png" alt="Positional error per task on real-world data">
+                <figcaption style="text-align: center; font-weight: bold;">Fig 3. Positional error in cms for each real-world task</figcaption>
+              </figure>
+            </div>
+  </div>
+</section>
+
+
+
+<section class="section" id="videos">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3" style="font-size: 2rem;">Mobile Manipulator Demonstrations</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        SLAP running on a mobile manipulator with an egocentric camera. With very few demonstrations, SLAP is able to grasp the bottle.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container is-max-desktop has-text-centered">
+        <div class="columns is-centered has-text-centered">
+            <div class="column">
+                <video poster="" id="vids1" muted playsinline height="100%">
+                    <source src="./media/stretch_pick_up_bottle_0.mp4" type="video/mp4">
+                </video>
+                <p>Pick up bottle - Position 1</p>
+                <button onclick="document.getElementById('vids1').play()">Play</button>
+            </div>
+            <div class="column">
+                <video poster="" id="vids2" muted playsinline height="100%">
+                    <source src="./media/stretch_pick_up_bottle_1.mp4" type="video/mp4">
+                </video>
+                <p>Pick up bottle - Position 2</p>
+                <button onclick="document.getElementById('vids2').play()">Play</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-8">
+                <div class="content">
+                    <p>
+                        Website template inspired by <a href="https://github.com/nerfies/nerfies.github.io">Nerfies:
+                            Deformable Neural Radiance Fields</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</html>

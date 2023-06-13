@@ -1,0 +1,23 @@
+body {
+    font-family: 'Noto Sans', sans-serif;
+  }
+    
+  .teaser .hero-body {
+    padding-top: 0;
+    padding-bottom: 2rem;
+  }
+  
+  .teaser {
+    font-family: 'Google Sans', sans-serif;
+  }
+  
+  
+  .publication-banner {
+    max-height: parent;
+  
+  }  
+  .publication-title {
+      font-family: 'Google Sans', sans-serif;
+  }
+  
+

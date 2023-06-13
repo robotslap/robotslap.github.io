@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Spatial-Language Attention Policies for Efficient Robot Learning">
+    <meta name="keywords" content="Language-conditioned multi-task robot learning">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/dotty/80/null/robot.png" />
+    <title>SLAP: Spatial-Language Attention Policies</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css'>
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+    <div class="navbar-menu">
+        <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                    Table of contents
+                </a>
+                <div class="navbar-dropdown">
+                    <a class="navbar-item" href="#title">
+                        Title
+                    </a>
+                    <a class="navbar-item" href="#videos">
+                        Videos
+                    </a>
+                    <a class="navbar-item" href="#abstract">
+                        Abstract
+                    </a>
+                    <a class="navbar-item" href="#overview">
+                        Overview
+                    </a>
+                    <a class="navbar-item" href="#results">
+                        Results
+                    </a>
+                    <a class="navbar-item" href="https://robotslap.github.io/rebuttal">
+                        Rebuttal
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</nav>
+
+<section class="hero" id="title">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title">Spatial-Language Attention Policies </h1>
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block">
+                            <p>
+                                Anonymous author(s)
+                            </p>
+                        </span>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+                            <span class="link-block">
+                                <a href="" class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        <i class="fa fa-file-pdf-o" style="font-size:24px"></i>
+                                    </span>
+                                    <span>Paper</span>
+                                </a>
+                            </span>
+                            <span class="link-block">
+                                <a href="" class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        <i class="fa fa-github" style="font-size:24px"></i>
+                                    </span>
+                                    <span>Code</span>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+<section class="videos" id="videos">
+    <div class="container is-max-desktop has-text-centered">
+        <div class="columns is-centered has-text-centered">
+            <div class="column">
+                <video poster="" id="vids" autoplay muted loop playsinline height="100%">
+                    <source src="./media/Close drawer 0.mp4" type="video/mp4">
+                </video>
+                <p>Close drawer</p>
+            </div>
+            <div class="column">
+                <video poster="" id="vids" autoplay muted loop playsinline height="100%">
+                    <source src="./media/Open bottom drawer 0.mp4" type="video/mp4">
+                </video>
+                <p>Open bottom drawer</p>
+            </div>
+            <div class="column">
+                <video poster="" id="vids" autoplay muted loop playsinline height="100%">
+                    <source src="./media/Open top drawer 0.mp4" type="video/mp4">
+                </video>
+                <p>Open top drawer</p>
+            </div>
+            <div class="column">
+                <video poster="" id="vids" autoplay muted loop playsinline height="100%">
+                    <source src="./media/Pick up bottle 0.mp4" type="video/mp4">
+                </video>
+                <p>Pick up the bottle</p>
+            </div>
+        </div>
+        <div class="columns is-centered has-text-centered">
+            <div class="column">
+                <video poster="" id="vids" autoplay muted loop playsinline height="100%">
+                    <source src="./media/Pick up lemon 0 .mp4" type="video/mp4">
+                </video>
+                <p>Pick up the lemon</p>
+            </div>
+            <div class="column">
+                <video poster="" id="vids" autoplay muted loop playsinline height="100%">
+                    <source src="./media/Place in basket 0.mp4" type="video/mp4">
+                </video>
+                <p>Place in the basket</p>
+            </div>
+            <div class="column">
+                <video poster="" id="vids" autoplay muted loop playsinline height="100%">
+                    <source src="./media/Place in bowl 0.mp4" type="video/mp4">
+                </video>
+                <p>Place in the bowl</p>
+            </div>
+            <div class="column">
+                <video poster="" id="vids" autoplay muted loop playsinline height="100%">
+                    <source src="./media/Place in drawer 0.mp4" type="video/mp4">
+                </video>
+                <p>Place in the drawer</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container is-max-desktop has-text-centered" style="margin-top: 5%;">
+        <div class="columns is-centered has-text-centered">
+            <div class="column">
+                <video poster="" id="vids" autoplay muted loop playsinline height="100%">
+                    <source src="./media/stretch_pick_up_bottle_0.mp4" type="video/mp4">
+                </video>
+                <p>Pick up the bottle from position 1 using a mobile manipulator</p>
+            </div>
+            <div class="column">
+                <video poster="" id="vids" autoplay muted loop playsinline height="100%">
+                    <source src="./media/stretch_pick_up_bottle_1.mp4" type="video/mp4">
+                </video>
+                <p>Pick up the bottle from position 2 using a mobile manipulator</p>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<section class="section" id="abstract">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-2">Abstract</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        Despite great strides in language-guided manipulation, existing work
+                        has been constrained to table-top settings. Table-tops allow for perfect and consis-
+                        tent camera angles, properties are that do not hold in mobile manipulation. Task
+                        plans that involve moving around the environment must be robust to egocentric
+                        views and changes in the plane and angle of grasp. A further challenge is ensur-
+                        ing this is all true while still being able to learn skills efficiently from limited data.
+                        We propose Spatial-Language Attention Policies (SLAP) as a solution. SLAP uses
+                        three-dimensional tokens as the input representation to train a single multi-task,
+                        language-conditioned action prediction policy. Our method shows an 80% success
+                        rate in the real world across eight tasks with a single model, and a 47.5% success
+                        rate when unseen clutter and unseen object configurations are introduced, even
+                        with only a handful of examples per task. This represents an improvement of 30%
+                        over prior work (20% given unseen distractors and configurations). In addition, we
+                        show how SLAPs robustness enables allows us to execute Task Plans from open-
+                        vocabulary instructions using a large language model for multi-step mobile ma-
+                        nipulation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section" id="overview">
+    <div class="container is-max-desktop has-text-centered">
+        <h2 class="title is-2">Overview of SLAP</h2>
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <img src="./media/overview.png" alt="SLAP base model" style="width:150%;">
+                <p style="font-size: 85%;"> Overview of SLAP: Our method has two components: an “interaction prediction”
+                    module which localizes relevant features in a scene, and an “action prediction” module which uses
+                    local context to predict an executable action.</p>
+            </div>
+        </div>
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <img src="./media/architecture.png" alt="SLAP base model" style="width:150%;">
+                <p style="font-size: 85%;">
+                    An overview of the classifier's architecture: The point cloud is
+                    downsampled to remove duplicates and encoded using two modified set-abstraction layers. The SA
+                    layers generate a local spatial embedding which is concatenated with proprioceptive features - in
+                    our case, the current gripper state. Both spatial and language features are concatenated and input
+                    into a PerceiverIO transformer backbone. We then predict an interaction score per spatial feature
+                    and the argmax is chosen as the interaction site for command <i>l</i>.
+                </p>
+            </div>
+        </div>
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <img src="./media/process.png" alt="SLAP base model" style="width:150%;">
+                <p style="font-size: 85%;">
+                    Process for SLAP training where demonstrations are collected and used to train the Interaction
+                    Prediction module and Action Prediction model.
+                    We can then make predictions on where the robot should move based on the predicted interaction
+                    point.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="result" id="results">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-2">Results</h2>
+                <img src="./media/result-1.png" alt="results-1">
+                <p>
+                    Predicted mask <span style="color: red;">(red)</span> of object of interest, and interaction sites
+                    <span style="color: #AB8938;">(yellow)</span>
+                </p>
+                <div class="columns">
+                    <div class="column">
+                        <img src="./media/table-1.png" alt="table 1">
+                        <p style="font-size: 85%;">
+                            SLAP vs PerAct comparision of performance on previously unseen real-world scenes of
+                            "in-distribution" configuration of objects.
+                        </p>
+                    </div>
+                    <div class="column">
+                        <img src="./media/table-2.png" alt="table 2">
+                        <p style="font-size: 85%;">
+                            Comparision of performances between our best-validation score model against PerAct on
+                            real-world instances. Both in and out of domain configurations used.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-8">
+                <div class="content">
+                    <p>
+                        Website template inspired by <a href="https://github.com/nerfies/nerfies.github.io">Nerfies:
+                            Deformable Neural Radiance Fields</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</html>
