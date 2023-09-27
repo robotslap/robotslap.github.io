@@ -79,7 +79,7 @@
                             </p>
                             <div class="is-size-8 publication-authors">
                                 <span class="author-block">
-                                     <sup>1</sup>Meta AI
+                                    <sup>1</sup>Meta AI
                                     <sup>2</sup>Carnegie Mellon <sup>3</sup> SUNY Binghamto
                                 </span>
                             </div>
@@ -192,22 +192,20 @@
                 <h2 class="title is-2">Abstract</h2>
                 <div class="content has-text-justified">
                     <p>
-                        Despite great strides in language-guided manipulation, existing work
-                        has been constrained to table-top settings. Table-tops allow for perfect and consis-
-                        tent camera angles, properties are that do not hold in mobile manipulation. Task
-                        plans that involve moving around the environment must be robust to egocentric
-                        views and changes in the plane and angle of grasp. A further challenge is ensur-
-                        ing this is all true while still being able to learn skills efficiently from limited data.
-                        We propose Spatial-Language Attention Policies (SLAP) as a solution. SLAP uses
-                        three-dimensional tokens as the input representation to train a single multi-task,
-                        language-conditioned action prediction policy. Our method shows an 80% success
-                        rate in the real world across eight tasks with a single model, and a 47.5% success
-                        rate when unseen clutter and unseen object configurations are introduced, even
-                        with only a handful of examples per task. This represents an improvement of 30%
-                        over prior work (20% given unseen distractors and configurations). In addition, we
-                        show how SLAPs robustness enables allows us to execute Task Plans from open-
-                        vocabulary instructions using a large language model for multi-step mobile ma-
-                        nipulation.
+                        Despite great strides in language guided manipulation, existing work
+                        has been constrained to table-top settings. This allows for perfect and consistent
+                        camera angles, but both of these properties are violated in mobile manipulation.
+                        Task plans that involve moving around the environment need manipulation strate-
+                        gies that operate from egocentric cameras and are robust to changes in the plane
+                        and angle of grasp. A further challenge is ensuring this is all true while still being
+                        able to learn skills efficiently from limited demonstration data.
+                        To accomplish this, we propose Spatial-Language Attention Policies (SLAP), a
+                        two-stage policy that: first, leverages instruction fine-tuned LLMs to describe an
+                        immediate "actionable skill", and second, trains a multimodal policy to predict the
+                        next "interaction point" and how to reach it (gripper state, collision-free vs aware
+                        planning, and a motion profile or velocity). We demonstrate our results on the
+                        Hello-Robot Stretch in a mock kitchen and encourage the community to begin
+                        moving beyond actions alone and tackling manner.
                     </p>
                 </div>
             </div>
