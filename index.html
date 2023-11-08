@@ -20,6 +20,7 @@
 </head>
 
 
+<!--Navigation bar-->
 <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
@@ -60,12 +61,13 @@
     </div>
 </nav>
 
+<!--Author Names-->
 <section class="hero" id="title">
     <div class="hero-body">
         <div class="container is-max-desktop">
             <div class="columns is-centered">
                 <div class="column has-text-centered">
-                    <h1 class="title is-1 publication-title">Spatial-Language Attention Policies </h1>
+                    <h1 class="title is-1 publication-title">SLAP: Spatial-Language Attention Policies </h1>
                     <div class="is-size-5 publication-authors">
                         <span class="author-block">
                             <p>
@@ -88,11 +90,33 @@
                     <div class="column has-text-centered">
                         <div class="publication-links">
                             <span class="link-block">
-                                <a href="https://openreview.net/pdf?id=7Pkzm2FgUmq" class="external-link button is-normal is-rounded is-dark">
+                                <a href="https://arxiv.org/pdf/2304.11235.pdf"
+                                class="external-link button is-normal is-rounded
+                                is-dark">
                                     <span class="icon">
                                         <i class="fa fa-file-pdf-o" style="font-size:24px"></i>
                                     </span>
                                     <span>Paper</span>
+                                </a>
+                            </span>
+                            <span class="link-block">
+                                <a href="https://arxiv.org/abs/2304.11235"
+                                class="external-link button is-normal is-rounded
+                                is-dark">
+                                    <span class="icon">
+                                        <i class="ai ai-arxiv"></i>
+                                    </span>
+                                    <span>arXiv</span>
+                                </a>
+                            </span>
+                            <span class="link-block">
+                                <a href="https://www.youtube.com/watch?v=4gnTiT1fbKA&t=1s&ab_channel=PriyamParashar"
+                                class="external-link button is-normal is-rounded
+                                is-dark">
+                                    <span class="icon">
+                                        <i class="fa fa-youtube"></i>
+                                    </span>
+                                    <span>Video</span>
                                 </a>
                             </span>
                             <span class="link-block">
@@ -110,105 +134,65 @@
         </div>
 </section>
 
+<!--Per skill video grid-->
 <section class="videos" id="videos">
-    <div class="container is-max-desktop has-text-centered">
-        <div class="columns is-centered has-text-centered">
-            <div class="column">
-                <video poster="" id="vids" autoplay muted loop playsinline height="100%">
-                    <source src="./media/website-close-drawer.mp4" type="video/mp4">
-                </video>
-                <p>Close drawer</p>
-            </div>
-            <div class="column">
-                <video poster="" id="vids" autoplay muted loop playsinline height="100%">
-                    <source src="./media/website-open-drawer.mp4" type="video/mp4">
-                </video>
-                <p>Open drawer</p>
-            </div>
-            <div class="column">
-                <video poster="" id="vids" autoplay muted loop playsinline height="100%">
-                    <source src="./media/website-take-bottle (2).mp4" type="video/mp4">
-                </video>
-                <p>Pick up bottle from the table</p>
-            </div>
-            <div class="column">
-                <video poster="" id="vids" autoplay muted loop playsinline height="100%">
-                    <source src="./media/pour_1_AdobeExpress.mp4" type="video/mp4">
-                </video>
-                <p>Pour in the bowl</p>
-            </div>
-        </div>
-        <div class="columns is-centered has-text-centered">
-            <div class="column">
-                <video poster="" id="vids" autoplay muted loop playsinline height="100%">
-                    <source src="./media/Pick up lemon 0 .mp4" type="video/mp4">
-                </video>
-                <p>Pick up the lemon</p>
-            </div>
-            <div class="column">
-                <video poster="" id="vids" autoplay muted loop playsinline height="100%">
-                    <source src="./media/Open bottom drawer 0.mp4" type="video/mp4">
-                </video>
-                <p>Open the bottom drawer</p>
-            </div>
-            <div class="column">
-                <video poster="" id="vids" autoplay muted loop playsinline height="100%">
-                    <source src="./media/Place in drawer 0.mp4" type="video/mp4">
-                </video>
-                <p>Place in the drawer</p>
-            </div>
-            <div class="column">
-                <video poster="" id="vids" autoplay muted loop playsinline height="100%">
-                    <source src="./media/Place in bowl 0.mp4" type="video/mp4">
-                </video>
-                <p>Place in the bowl</p>
-            </div>
-        </div>
-    </div>
-
+    <!--Longitudinal video-->
     <div class="container is-max-desktop has-text-centered" style="margin-top: 5%;">
         <div class="columns is-centered has-text-centered is-vcentered ">
-            <div class="column ">
-                <p style="text-align: justify;">SLAP can even solve long-horizon, multi-step tasks in conjunction with a
-                    LLM task planner. Since
-                    SLAP doesn't impose any constraints on size, position or resolution of the input point-cloud it is
-                    very effective even on an unconstrained, mobile robot setup. </p>
-            </div>
-            <div class="column">
-                <video poster="" id="vids" autoplay muted loop playsinline height="100%">
-                    <source src="./media/task_0_trial_1_censored_AdobeExpress.mov" type="video/mp4">
+            <div class="column"  style="position: relative;">
+                <video poster="" autoplay muted loop playsinline height="100%"
+                controls title="Bring me my bottle from the cabinet" id="longitudinal_bottle_human">
+                    <source src="./media/bring-me-my-bottle.mp4" type="video/mp4">
                 </video>
-                <p>Pick up a bottle and hand it to a human</p>
+                <p>Attention-based Policy</p>
+                <script>
+                    const videoElement = document.getElementById('longitudinal_bottle_human');
+                    videoElement.currentTime = 80; // Set the video to start playing at 10 seconds
+                    videoElement.playbackRate = 3;
+                </script>
+            </div>
+            <div class="column is-two-fifths" style="position: relative;">
+                <div class="videos" style="position: absolute; bottom: 60px; height: 100%;">
+                    <video poster="" id="vids" autoplay muted loop playsinline height="100%"
+                    controls title="Handover Affordance">
+                        <source src="./media/hand-highlight.mp4" type="video/mp4">
+                    </video>
+                <p>Attention-based Representation</p>
+                </div>
             </div>
         </div>
     </div>
     </div>
 </section>
 
+<!--Abstract + SpotLight Video-->
 <section class="section" id="abstract">
     <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
-            <div class="column is-four-fifths">
+            <div class="column">
                 <h2 class="title is-2">Abstract</h2>
                 <div class="content has-text-justified">
                     <p>
-                        Despite great strides in language guided manipulation, existing work
-                        has been constrained to table-top settings. This allows for perfect and consistent
-                        camera angles, but both of these properties are violated in mobile manipulation.
-                        Task plans that involve moving around the environment need manipulation strate-
-                        gies that operate from egocentric cameras and are robust to changes in the plane
-                        and angle of grasp. A further challenge is ensuring this is all true while still being
-                        able to learn skills efficiently from limited demonstration data.
-                        To accomplish this, we propose Spatial-Language Attention Policies (SLAP), a
-                        two-stage policy that: first, leverages instruction fine-tuned LLMs to describe an
-                        immediate "actionable skill", and second, trains a multimodal policy to predict the
-                        next "interaction point" and how to reach it (gripper state, collision-free vs aware
-                        planning, and a motion profile or velocity). We demonstrate our results on the
-                        Hello-Robot Stretch in a mock kitchen and encourage the community to begin
-                        moving beyond actions alone and tackling manner.
+                        Despite great strides in language-guided manipulation, existing work has been constrained to table-top settings.
+                        Table-tops allow for perfect and consistent camera angles, properties are that do not hold in mobile manipulation. Task
+                        plans that involve moving around the environment must be robust to egocentric views and changes in the plane and angle
+                        of grasp. A further challenge is ensuring this is all true while still being able to learn skills efficiently from
+                        limited data. We propose Spatial-Language Attention Policies (SLAP) as a solution. SLAP uses three-dimensional tokens as
+                        the input representation to train a single multi-task, language-conditioned action prediction policy. Our method shows
+                        an 80% success rate in the real world across eight tasks with a single model, and a 47.5% success rate when unseen
+                        clutter and unseen object configurations are introduced, even with only a handful of examples per task. This represents
+                        an <b>improvement of 30% over prior work (20% given unseen distractors and configurations)</b>. We see a <b>4x improvement over
+                        baseline in mobile manipulation setting</b>. In addition, we show how SLAPs robustness allows us to execute Task Plans from
+                        open-vocabulary instructions using a large language model for multi-step mobile manipulation.
                     </p>
                 </div>
             </div>
+        </div>
+        <div class="column">
+            <iframe width="100%" height="500px"
+            src="https://www.youtube.com/embed/4gnTiT1fbKA?rel=0&showinfo=0"
+                frameborder="0" allowfullscreen>
+            </iframe>
         </div>
     </div>
 </section>
@@ -217,17 +201,95 @@
 <section class="section" id="overview">
     <div class="container is-max-desktop has-text-centered">
         <h2 class="title is-2">Overview of SLAP</h2>
-        <div class="columns is-centered has-text-centered">
-            <div class="column is-four-fifths">
-                <img src="./media/overview.png" alt="SLAP base model" style="width:150%;">
-                <p style="font-size: 85%;"> Overview of SLAP: Our method has two components: an “interaction prediction”
+        <div class="columns is-centered has-text-justified">
+            <div class="column">
+                <img src="./media/process.png" alt="SLAP base model" style="width:150%;">
+                <p> 
+                    Data is collected using teleoperation where <em>interaction
+                    points</em> &lpar;contact points with objects, yellow sphere&rpar;
+                    and <em>actions</em> &lpar;6-DOF position of gripper, shown as
+                    coordinate axis&rpar; are
+                    manually annotated. This data
+                    is used to train the two primary components: an “interaction prediction”
                     module which localizes relevant features in a scene, and an “action prediction” module which uses
-                    local context to predict an executable action.</p>
+                    local context to predict an executable action. The policies are only
+                    parameterized by input point-cloud, gripper proprioception,
+                    time-axis and language description of the skill.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="videos" id="videos">
+    <div class="container is-max-desktop has-text-centered">
+        <div class="columns is-centered has-text-centered">
+            <div class="column">
+                <video poster="" id="per-skill-vid" autoplay muted loop playsinline height="100%">
+                    <source src="./media/website-close-drawer.mp4" type="video/mp4">
+                </video>
+                <p>Close drawer</p>
+            </div>
+            <div class="column">
+                <video poster="" id="per-skill-vid" autoplay muted loop playsinline height="100%">
+                    <source src="./media/website-open-drawer.mp4" type="video/mp4">
+                </video>
+                <p>Open drawer</p>
+            </div>
+            <div class="column">
+                <video poster="" id="per-skill-vid" autoplay muted loop playsinline height="100%">
+                    <source src="./media/website-take-bottle (2).mp4" type="video/mp4">
+                </video>
+                <p>Pick up bottle from the table</p>
+            </div>
+            <div class="column">
+                <video poster="" id="per-skill-vid" autoplay muted loop playsinline height="100%">
+                    <source src="./media/pour_1_AdobeExpress.mp4" type="video/mp4">
+                </video>
+                <p>Pour in the bowl</p>
             </div>
         </div>
         <div class="columns is-centered has-text-centered">
+            <div class="column">
+                <video poster="" id="per-skill-vid" autoplay muted loop playsinline height="100%">
+                    <source src="./media/Pick up lemon 0 .mp4" type="video/mp4">
+                </video>
+                <p>Pick up the lemon</p>
+            </div>
+            <div class="column">
+                <video poster="" id="per-skill-vid" autoplay muted loop playsinline height="100%">
+                    <source src="./media/Open bottom drawer 0.mp4" type="video/mp4">
+                </video>
+                <p>Open the bottom drawer</p>
+            </div>
+            <div class="column">
+                <video poster="" id="per-skill-vid" autoplay muted loop playsinline height="100%">
+                    <source src="./media/Place in drawer 0.mp4" type="video/mp4">
+                </video>
+                <p>Place in the drawer</p>
+            </div>
+            <div class="column">
+                <video poster="" id="per-skill-vid" autoplay muted loop playsinline height="100%">
+                    <source src="./media/Place in bowl 0.mp4" type="video/mp4">
+                </video>
+                <p>Place in the bowl</p>
+            </div>
+            <script>
+                const videoElement = document.getElementById('per-skill-vid');
+                // videoElement.currentTime = 80; // Set the video to start playing at 10 seconds
+                videoElement.playbackRate = 10;
+            </script>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="overview">
+    <div class="container is-max-desktop has-text-centered">
+        <div class="columns is-centered has-text-left">
             <div class="column is-four-fifths">
-                <img src="./media/architecture.png" alt="SLAP base model" style="width:150%;">
+                <img src="./media/architecture.png" alt="SLAP base model"
+                style="width:150%;">
+            </div>
+            <div class="column is-one-fifth">
                 <p style="font-size: 85%;">
                     An overview of the classifier's architecture: The point cloud is
                     downsampled to remove duplicates and encoded using two modified set-abstraction layers. The SA
@@ -237,16 +299,6 @@
                     and the argmax is chosen as the interaction site for command <i>l</i>.
                 </p>
             </div>
-        </div>
-        <div class="columns is-centered has-text-centered">
-            <div class="column is-four-fifths">
-                <img src="./media/process.png" alt="SLAP base model" style="width:150%;">
-                <p style="font-size: 85%;">
-                    Process for SLAP training where demonstrations are collected and used to train the Interaction
-                    Prediction module and Action Prediction model.
-                    We can then make predictions on where the robot should move based on the predicted interaction
-                    point.
-                </p>
             </div>
         </div>
     </div>
